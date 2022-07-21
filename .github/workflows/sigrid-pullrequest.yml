@@ -1,0 +1,21 @@
+name: sigrid-pullrequest
+
+on: [pull_request]
+
+jobs:
+  SigridCI-for-QSM:
+    runs-on: ubuntu-latest
+    container: softwareimprovementgroup/mendixpreprocessor:latest
+    env:
+      SIGRID_CI_CUSTOMER: '4mendix'
+      SIGRID_CI_SYSTEM: 'hackme'
+      SIGRID_CI_TOKEN: "${{ secrets.SIGRID_CI_TOKEN }}"
+      MENDIX_TOKEN: "${{ secrets.MENDIX_TOKEN }}"
+      CI_PROJECT_DIR: "."
+      SIGRID_CI_TARGET_QUALITY: '3.5'
+      
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - run: |
+          /usr/local/bin/entrypoint.sh
