@@ -15,6 +15,7 @@ jobs:
       SIGRID_CI_TOKEN: "${{ secrets.SIGRID_CI_TOKEN }}"
       MENDIX_TOKEN: "${{ secrets.MENDIX_TOKEN }}"
       CI_PROJECT_DIR: "."
+      SIGRID_CI_PUBLISH: 'publish'
       
     steps:
       - name: Check out repository
