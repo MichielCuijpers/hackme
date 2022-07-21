@@ -6,7 +6,7 @@ on:
       - "master"
 
 jobs:
-  SigridCI-for-Mendix:
+  Sigrid-CI-for-Mendix:
     runs-on: ubuntu-latest
     container: softwareimprovementgroup/mendixpreprocessor:latest
     env:
